@@ -1,0 +1,131 @@
+/* Space out content a bit */
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer,
+.content {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+    padding-bottom: 19px;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+}
+
+.content {
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+    text-align: center;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+}
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+    padding: 14px 24px;
+    font-size: 21px;
+}
+
+/* Supporting marketing content */
+.marketing {
+    margin: 40px 0;
+}
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
+
+.trg {
+    padding-right: 15px;
+    padding-left: 0px;
+}
+
+.pod {
+    padding-right: 0px;
+    padding-left: 15px;
+}
+
+.side-img{
+    height: 32px;
+    width: 32px;
+}
+
+.table td, th {
+    text-align: center;
+}
+/*chat css*/
+.chat { font: 15px Helvetica, Arial;padding: 0; box-sizing: border-box; border: 1px solid ;border-color: #428BCA;
+    right:15px;top:3px;position:fixed;
+    height: 99%;
+}
+.chat-title{text-align: center;color:#31708F;height:5%;display: block;position: relative;padding-top: 10px;background-color: #D9EDF7}
+.chat-container{  border: 1px solid ;border-color: #428BCA;
+    display: block;
+    height: 87%;
+    position: relative;
+}
+
+form .chat-form {
+    border-top:1px solid #5599ff; padding: 3px;  width: 100%;;position: relative;
+    height: 8%;
+}
+.chat-input-form {width:75% ;height: 100%;margin-top:4px}
+.submit-chat {width:25%;color: #111}
+#messages { list-style-type: none; margin: 0; padding: 0;overflow-y: scroll;
+    position: relative;
+    width:250px;
+    height: 100%;
+}
+#messages li { padding: 5px 10px; }
+#messages li:nth-child(odd) { background: #F5F5F5; }
+#messages li:nth-child(even) { background: #5599ff; }

@@ -129,3 +129,17 @@ $(document).ready(function(){
 
 function animate(){
     draw();}
+function get_values(){
+    alert("getting values ");
+    var x=document.getElementById('ques_text');
+    var y=document.getElementsByName('side')[0];
+    alert(y.checked);
+    alert(x.value);
+}
+function char(){
+    var x=document.getElementsByClassName("answer_text");
+    for(var i=0;i< x.length;i++) {
+       // alert(x[i].value);
+        //alert(x[i].id);
+    }
+}

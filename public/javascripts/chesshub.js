@@ -7,7 +7,7 @@ $( document ).ready(function() {
     var username;
     var time_out=300;//5 minutes in seconds
     var domain_url="http://192.168.12.77:3000";// The url where the game is to be run (dont include '/' at the end)
-    var enable_time_out=true;// play with timeout ? (true/false)
+    var enable_time_out=false;// play with timeout ? (true/false)
     var enable_time_add=false;//add 10 sec to every valid move if enabled( Blitz mode rules)
     if($("#loggedUser").length) {
         username = $("#loggedUser").data("user");
@@ -167,12 +167,43 @@ $( document ).ready(function() {
     /*
      * Game page
      */
+
+    /*
+     * Hangman game page
+     */
+
+    //gets the questions from the user !
+    $('#post-question-button').click(function (ev) {
+        ev.preventDefault();
+        var x=document.getElementById('ques_text');
+        var y=document.getElementsByName('side')[0];
+        alert(y.checked);
+        alert(x.value);
+        alert("posting quest");
+    });
+    $("#hints_sections").append("<h5>Its a Movie name</h5>");
+    $(".answer_text").change(function(ev){
+        ev.preventDefault();
+        var x=document.getElementsByClassName("answer_text");
+        for(var i=0;i< x.length;i++) {
+             alert(x[i].value);
+            alert(x[i].id);
+        }
+    });
+    function char(){
+        var x=document.getElementsByClassName("answer_text");
+        for(var i=0;i< x.length;i++) {
+            // alert(x[i].value);
+            //alert(x[i].id);
+        }
+    };
+
     if ($("#board").length) {
 
         /*
          * Initialize a new game
          */
-        var game = new Chess();
+        //var game = new Chess();
         var pgnEl = $('#pgn');
         var token = $("#board").data('token');
         var side = $("#board").data('side');
@@ -189,7 +220,7 @@ $( document ).ready(function() {
              /*
              added condtion to checkout for gameover
              */
-            var possibleMoves = game.moves();
+
             //alert(game.game_over());
             // if the game is over, reload a new game
             if (game.in_draw() === true ) {

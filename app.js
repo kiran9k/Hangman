@@ -7,7 +7,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
+//var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
 var url = require("url");
@@ -17,7 +17,7 @@ var config = require('config');
 var app = express();
 
 // configure database
-require('./config/database')(app, mongoose);
+//require('./config/database')(app, mongoose);
 
 // bootstrap data models
 fs.readdirSync(__dirname + '/models').forEach(function (file) {
@@ -48,7 +48,7 @@ var api = require('./routes/api');
 var play = require('./routes/play');
 var login = require('./routes/login');
 var register = require('./routes/register');
-var search = require('./routes/search');
+//var search = require('./routes/search');
 
 
 app.use(function(req, res, next) {
@@ -63,7 +63,7 @@ app.use('/register', register);
 app.use('/account', account);
 app.use('/play', play);
 app.use('/api', api);
-app.use('/search', search);
+//app.use('/search', search);
 app.set('trust proxy', '192.168.12.77'); // specify a single subnet
 // configure error handlers
 require('./config/errorHandlers.js')(app);

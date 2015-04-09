@@ -1,6 +1,7 @@
 module.exports = function (server) {
 
     var io = require('socket.io').listen(server);
+
     /*
     socket support for chat
      */
@@ -15,6 +16,7 @@ module.exports = function (server) {
     /*
      * live show of top rated game
      */
+
     var topRatedGame = new chess.Chess(); // fake game (playing random moves). It should be a real game being played on the server
 
     var tv = io.of('/tv'); // Socket to broadcast top rated game moves to index and tv pages
@@ -114,6 +116,7 @@ module.exports = function (server) {
         socket.on('new-move', function(data) {
             socket.broadcast.to(data.token).emit('new-move', data);
         });
+
 
         /*
          * A player resigns => notify opponent, leave game room and delete the game

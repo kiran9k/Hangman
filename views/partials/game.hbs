@@ -6,23 +6,30 @@
             <h4><b>Question</b> : Enter Word here : <input type="text" id="ques_text" value="">
             <input type="radio" name="side" value="Personality" checked>Presonality
             <input type="radio" name="side" value="Movie" checked>Movie
-            <input type="button" onclick="get_values()" value="Post Question"></h4>
+            <input type="button" id="post-question-button" value="Post Question"></h4>
         </div>
         <div id ="answer-placer">
             <!-- display the text as a stream of Characters -->
             <table>
-                <tr>
+                <tr id="populate_answers">
                     <td>A</td>
                     <td>A</td>
                     <td>A</td>
                     <td>A</td>
-                    <td><input type="text" id="0" class="answer_text" value="" maxlength="1" width="auto" value="" onchange="char()"> </td>
-                    <td><input type="text" class="answer_text" value="" maxlength="1" width="auto" value="" onchange="char()"> </td>
-                    <td><input type="text" class="answer_text" value="" maxlength="1" width="auto" value="" onchange="char()"> </td>
+                    <td><input type="text" id="0" class="answer_text" value="" maxlength="1" width="auto" value="" > </td>
+                    <td><input type="text" class="answer_text" value="" maxlength="1" width="auto" value="" > </td>
+                    <td><input type="text" class="answer_text" value="" maxlength="1" width="auto" value="" > </td>
                     <td>A</td>
                     <td>A</td>
                 </tr>
             </table>
+            <div id="hints_sections">
+                <H4>Hint :</H4>
+            </div>
+            <div id="waiting">
+                <h3>Please wait ! </h3>
+                <h4>Player yet to ask  question !</h4>
+            </div>
         </div>
     </div>
     <div id="game-details" class="col-md-4 col-md-offset-1">

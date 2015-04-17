@@ -129,3 +129,28 @@ form .chat-form {
 #messages li { padding: 5px 10px; }
 #messages li:nth-child(odd) { background: #F5F5F5; }
 #messages li:nth-child(even) { background: #5599ff; }
+
+table{
+    font-size: 20px;
+    border-right: 1px solid;
+}
+td.table_text{
+    border-left: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    width:20px;
+    text-align: center;
+
+}
+td.table_space{
+    border-left: 1px solid;
+    width:20px;
+    text-align: center;
+
+}
+.populate_answers{
+    text-align: center;
+    font-size:20px;
+    width: 20px;
+    border:none;
+}

@@ -9,6 +9,7 @@ $( document ).ready(function() {
     var domain_url="http://192.168.12.77:3000";// The url where the game is to be run (dont include '/' at the end)
     var enable_time_out=false;// play with timeout ? (true/false)
     var enable_time_add=false;//add 10 sec to every valid move if enabled( Blitz mode rules)
+    var side ;
     if($("#loggedUser").length) {
         username = $("#loggedUser").data("user");
     } else {
@@ -171,23 +172,125 @@ $( document ).ready(function() {
     /*
      * Hangman game page
      */
+    var ques_token='';
+    var user_option=[];
+    var modified_text='';
 
     //gets the questions from the user !
     $('#post-question-button').click(function (ev) {
         ev.preventDefault();
         var x=document.getElementById('ques_text');
         var y=document.getElementsByName('side')[0];
-        alert(y.checked);
-        alert(x.value);
-        alert("posting quest");
+        socket.emit('new-question', {
+            token: token,
+            text: x.value,
+            type:y
+        });
     });
+
+    load_options=function()
+    {
+        $("#used_options").empty();
+        for(var i in user_option)
+        {
+            $("#used_options").append("<td class='table_text'><div class='populate_answers'>"+user_option[i]+"</div></td>")
+        }
+    };
+    load_answers=function(modified_text)
+    {
+        $("#populate_answers").empty();
+        for(var i in modified_text)
+        {
+            if(modified_text[i]=='^')
+            {
+                $("#populate_answers").append("<td class='table_text'><input type='text' class='populate_answers' readonly value=''></td>");
+            }
+            else if(modified_text[i]==' ')
+            {
+                $("#populate_answers").append("<td class='table_space'><input type='text' class='populate_answers' readonly value=''></td>");
+            }
+            else
+                $("#populate_answers").append("<td class='table_text'><input type='text' class='populate_answers' readonly value='"+ modified_text[i]+"'></td>");
+        }
+    };
+
+    socket.on('question-callback',function(data){
+        if(token==data.user) {
+            //handle input data !
+            ques_token = data.token;
+            modified_text = data.modified_text;
+            user_option = [];
+            load_answers(modified_text);
+            if(side=='black') {
+                $('#waiting').hide();
+                $("#answer-placer").show();
+            }
+        }
+    });
+
+    socket.on("answer-callback",function(data){
+        if(data.token==token) {
+            load_answers(data.ques_text);
+            modified_text=data.ques_text;
+            user_option=data.user_option;
+            load_options();
+            if(data.won) {
+                alert("Congrats ! ... Youve won !");
+                side = side === "black" ? "white" : "black";
+                /*
+                If won load a new game ! ..
+                question toggle .!
+                answer toggle !
+                 */
+                $("#question-placer").toggle();
+                $("#answer-placer").toggle();
+                $("#populate_answers").empty();
+                $("#used_options").empty();
+                if(side=='black') {
+                    $('#waiting').show();
+                    $("#answer-placer").hide();
+                }
+
+            }
+        }
+
+    });
+
     $("#hints_sections").append("<h5>Its a Movie name</h5>");
-    $(".answer_text").change(function(ev){
+
+    $("#check_answer").click(function(ev){
+        ev.preventDefault;
+        var x=$("#enter_answer")[0].value.toUpperCase();
+        $("#enter_answer")[0].value='';
+        if(x=='' || x== ' ')
+            return;
+        if(user_option.indexOf(x)<0)
+        {
+            user_option.push(x);
+            socket.emit('answer-choices', {
+                token: token,
+                text: x,
+                ques_token:ques_token,
+                ques_text:modified_text,
+                user_option:user_option
+            });
+        }
+        else{
+            alert("Character already added ! ");
+        }
+    });
+   /* $(".answer_text").change(function(ev){
         ev.preventDefault();
         var x=document.getElementsByClassName("answer_text");
         for(var i=0;i< x.length;i++) {
-             alert(x[i].value);
-            alert(x[i].id);
+            if(x[i].value!='') {
+                socket.emit('answer-choices', {
+                    token: token,
+                    text: x[i].value,
+                    ques_token:ques_token,
+                    ques_text:modified_text
+                });
+            }
         }
     });
     function char(){
@@ -197,16 +300,36 @@ $( document ).ready(function() {
             //alert(x[i].id);
         }
     };
+*/
+    initiate();
+    if ($("#board").length) {
+        side = $("#board").data('side');
+        //alert(side);
+    }
+    if(side=="white")
+    {
+        //initial white ==post question !
+        $("#question-placer").show();
+        $("#answer-placer").hide();
+
+    }
+    else if(side=="black")
+    {
+        //initial BLACK ==give Answers !!
+        $("#question-placer").hide();
+        $("#answer-placer").show();
+    }
 
     if ($("#board").length) {
 
         /*
          * Initialize a new game
          */
-        //var game = new Chess();
+        var game = new Chess();
         var pgnEl = $('#pgn');
         var token = $("#board").data('token');
-        var side = $("#board").data('side');
+
+
         var opponentSide = side === "black" ? "white" : "black";
 
 	    /*
@@ -215,6 +338,7 @@ $( document ).ready(function() {
          */
         var black=false;
         var white=false;
+
         var timer=function(time_set)
         {
              /*

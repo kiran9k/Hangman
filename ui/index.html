@@ -29,8 +29,8 @@
     <header>
     </header>
 
-    <!--
-    <div id="container" width="450" height="550" style="border: 1px black solid" >
+
+   <!-- <div id="container" width="450" height="550" style="border: 1px black solid" >
       <canvas id="hangman" width="400" height="500"></canvas>
     </div>
     <button id="button1" onclick="initiate()">Clear</button>
@@ -42,25 +42,23 @@
     <button id="button1" onclick="drawHead()">head</button>
     <button id="button1" onclick="drawDead()">Kill</button>
 -->
+
     <div id="question-placer">
         <h4><b>Question</b> : Enter Word here : </h4><input type="text" id="ques_text" value=""><br>
         <input type="radio" name="side" value="Personality" checked>Presonality
         <input type="radio" name="side" value="Movie" checked>Movie
         <input type="button" onclick="get_values()" value="Post Question">
     </div>
+
+    <!-- input button-->
+    <input type="text" id="enter_answer" value="" maxlength="1" width="auto">
+    <input type="button" id="check_answer" onclick="" value="Check">
+
     <div id ="answer-placer">
         <!-- display the text as a stream of Characters -->
         <table>
-            <tr>
-                <td>A</td>
-                <td>A</td>
-                <td>A</td>
-                <td>A</td>
-                <td><input type="text" id="0" class="answer_text" value="" maxlength="1" width="auto" value="" onchange="char()"> </td>
-                <td><input type="text" class="answer_text" value="" maxlength="1" width="auto" value="" onchange="char()"> </td>
-                <td><input type="text" class="answer_text" value="" maxlength="1" width="auto" value="" onchange="char()"> </td>
-                <td>A</td>
-                <td>A</td>
+            <tr id="answer_table">
+
             </tr>
         </table>
     </div>

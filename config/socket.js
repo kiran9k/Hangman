@@ -1,5 +1,5 @@
 module.exports = function (server) {
-
+    var game_logic=require('./gamelogic.js');
     var io = require('socket.io').listen(server);
 
     /*
@@ -116,6 +116,30 @@ module.exports = function (server) {
         socket.on('new-move', function(data) {
             socket.broadcast.to(data.token).emit('new-move', data);
         });
+
+
+        socket.on('new-question', function(data) {
+            //new question arrived
+            //Handle the new question
+            result_text=game_logic.text_creator(data);
+            io.sockets.emit('question-callback',result_text);
+        });
+
+        socket.on('answer-choices',function(data){
+           //recieved a new choice of answer !
+            //check if the answer char is present in the original text !
+            console.log("########################################");
+            console.log(data.text);
+            console.log(data.ques_token);
+            console.log(data.ques_text);
+            data=game_logic.check_char(data);
+            console.log(data.status);
+            io.sockets.emit("answer-callback",data);//the answer has to be emiited to both the users !
+        });
+
+
+
+
 
 
         /*

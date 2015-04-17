@@ -138,7 +138,10 @@ module.exports = function (server) {
         });
 
 
-
+        socket.on("transmit_score",function(data)
+        {
+            io.sockets.emit("recieve_score",data);
+        });
 
 
 

@@ -5,11 +5,16 @@ $( document ).ready(function() {
      * This name is then passed to the socket connection handshake query
      */
     var username;
+    var myplayer;
+    var oponplayer;
+    var player_session;
+    var my_score=0,opp_score=0;
     var time_out=300;//5 minutes in seconds
     var domain_url="http://192.168.12.77:3000";// The url where the game is to be run (dont include '/' at the end)
     var enable_time_out=false;// play with timeout ? (true/false)
     var enable_time_add=false;//add 10 sec to every valid move if enabled( Blitz mode rules)
     var side ;
+    var hangman_animator=-1;
     if($("#loggedUser").length) {
         username = $("#loggedUser").data("user");
     } else {
@@ -180,7 +185,15 @@ $( document ).ready(function() {
     $('#post-question-button').click(function (ev) {
         ev.preventDefault();
         var x=document.getElementById('ques_text');
-        var y=document.getElementsByName('side')[0];
+        var y=document.getElementsByName('side');//get sides & check which one has been selected !
+        for(var i in y)
+        {
+            alert(y[i].isSelected);
+            if(y[i].selected)
+            {
+                alert(y[i].value);
+            }
+        }
         socket.emit('new-question', {
             token: token,
             text: x.value,
@@ -196,6 +209,7 @@ $( document ).ready(function() {
             $("#used_options").append("<td class='table_text'><div class='populate_answers'>"+user_option[i]+"</div></td>")
         }
     };
+
     load_answers=function(modified_text)
     {
         $("#populate_answers").empty();
@@ -233,27 +247,38 @@ $( document ).ready(function() {
             load_answers(data.ques_text);
             modified_text=data.ques_text;
             user_option=data.user_option;
+            if(!data.status)
+            {
+                hangman_animator+=1;
+                draw(hangman_animator);
+                if(hangman_animator==6)
+                {
+
+                    if(side=="black")
+                    {
+                        alert("You Lost !");
+                    }
+
+                    side = side === "black" ? "white" : "black";
+                    new_game();//lost !!
+                }
+            }
             load_options();
             if(data.won) {
-                alert("Congrats ! ... Youve won !");
+                if(side=="black")
+                {
+                    alert("Congrats ! ... Youve won !");
+                    my_score++;
+                }
                 side = side === "black" ? "white" : "black";
                 /*
                 If won load a new game ! ..
                 question toggle .!
                 answer toggle !
                  */
-                $("#question-placer").toggle();
-                $("#answer-placer").toggle();
-                $("#populate_answers").empty();
-                $("#used_options").empty();
-                if(side=='black') {
-                    $('#waiting').show();
-                    $("#answer-placer").hide();
-                }
-
+                new_game();
             }
         }
-
     });
 
     $("#hints_sections").append("<h5>Its a Movie name</h5>");
@@ -301,6 +326,39 @@ $( document ).ready(function() {
         }
     };
 */
+
+    socket.on("recieve_score",function(data){
+        if(data.token==token){
+            if(data.player_session!=player_session){
+                alert("score");
+                opp_score=data.score;
+            }
+        }
+        $('#player-white').html(myplayer+my_score);
+        $('#player-black').html(oponplayer+opp_score);
+    });
+    function  new_game(){
+        player_session=Math.random()+Math.floor(Math.random()*10)+Math.floor(Math.random()*100);
+        //initiate the Hangman UI !
+        socket.emit("transmit_score",{
+            token:token,
+            player_session:player_session,
+            score:my_score
+        });
+        initiate();
+        $("#question-placer").toggle();
+        $("#answer-placer").toggle();
+        $("#populate_answers").empty();
+        $("#used_options").empty();
+        hangman_animator=-1;
+        if(side=='black') {
+            $('#waiting').show();
+            $("#answer-placer").hide();
+        }
+        $('#player-white').html(myplayer+my_score);
+        $('#player-black').html(oponplayer+opp_score);
+    }
+
     initiate();
     if ($("#board").length) {
         side = $("#board").data('side');
@@ -514,8 +572,20 @@ $( document ).ready(function() {
             time_sets[1]=time_out;
             timer_interval=setInterval(function(){ time_sets=timer(time_sets)}, 1000);//repeat every second
             $('#turn-w').addClass("fa fa-spinner");
-            $('#player-white').html(data.white);
-            $('#player-black').html(data.black);
+            if(side=='white')
+            {
+                myplayer=data.white;
+                oponplayer=data.black;
+            }
+            if(side=='black')
+            {
+                myplayer=data.black;
+                oponplayer=data.white;
+            }
+            $('#player-white').html(myplayer);
+            $('#player-black').html(oponplayer);
+            /*$('#player-white').html(data.white);
+            $('#player-black').html(data.black);*/
             $('#gameUrlPopup').modal('hide');
         });
 

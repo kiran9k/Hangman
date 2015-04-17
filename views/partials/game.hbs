@@ -1,20 +1,22 @@
 <script type="text/javascript" src="/javascripts/hangman_animation.js"></script>
 <div class="row">
-
     <div id="board" class="col-md-7" data-token="{{ token }}" data-side="{{ side }}"></div>
     <div id="game-main" >
+
         <div id="question-placer">
             <h4><b>Question</b> : Enter Word here : <input type="text" id="ques_text" value=""  onfocus="{this.value = '';}">
             <input type="radio" name="side" value="Personality" checked>Presonality
             <input type="radio" name="side" value="Movie" checked>Movie
             <input type="button" id="post-question-button" value="Post Question"></h4>
         </div>
+
         <div id="answers">
             <table>
                 <tr id="populate_answers">
                 </tr>
             </table>
         </div>
+
         <div id ="answer-placer">
             <!-- display the text as a stream of Characters -->
 

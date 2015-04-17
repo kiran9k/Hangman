@@ -26,7 +26,7 @@
       <file leaf-file-name="gamelogic.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/gamelogic.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="750" max-vertical-offset="2475">
+            <state vertical-scroll-proportion="0.0" vertical-offset="291" max-vertical-offset="2475">
               <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
               <folding />
             </state>
@@ -43,14 +43,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chesshub.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="chesshub.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/chesshub.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.962963" vertical-offset="6445" max-vertical-offset="10455">
-              <caret line="484" column="51" selection-start-line="484" selection-start-column="51" selection-end-line="484" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.23385301" vertical-offset="2760" max-vertical-offset="11505">
+              <caret line="191" column="29" selection-start-line="191" selection-start-column="29" selection-end-line="191" selection-end-column="29" />
               <folding>
-                <element signature="e#7386#7519#0" expanded="false" />
+                <element signature="e#8280#8413#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="948" max-vertical-offset="1410">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -68,8 +78,8 @@
       <file leaf-file-name="hangman_animation.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/hangman_animation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.888889" vertical-offset="1620" max-vertical-offset="2205">
-              <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+            <state vertical-scroll-proportion="-18.333334" vertical-offset="675" max-vertical-offset="2265">
+              <caret line="80" column="24" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="24" />
               <folding>
                 <element signature="e#0#39#0" expanded="false" />
               </folding>
@@ -87,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.hbs" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="game.hbs" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/partials/game.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6" vertical-offset="0" max-vertical-offset="1650">
-              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+            <state vertical-scroll-proportion="-2.5" vertical-offset="60" max-vertical-offset="1680">
+              <caret line="8" column="71" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -110,8 +120,8 @@
       <file leaf-file-name="socket.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/socket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1683" max-vertical-offset="3000">
-              <caret line="133" column="40" selection-start-line="133" selection-start-column="40" selection-end-line="133" selection-end-column="40" />
+            <state vertical-scroll-proportion="-4.5185184" vertical-offset="1993" max-vertical-offset="3045">
+              <caret line="141" column="9" selection-start-line="141" selection-start-column="9" selection-end-line="141" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -134,15 +144,15 @@
         <option value="$PROJECT_DIR$/ui/style.css" />
         <option value="$PROJECT_DIR$/ui/script.js" />
         <option value="$PROJECT_DIR$/game_logic/gamelogic.js" />
-        <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/config/socket.js" />
         <option value="$PROJECT_DIR$/ui/index.html" />
         <option value="$PROJECT_DIR$/public/stylesheets/chesshub.css" />
         <option value="$PROJECT_DIR$/views/layout.hbs" />
         <option value="$PROJECT_DIR$/config/gamelogic.js" />
         <option value="$PROJECT_DIR$/public/javascripts/hangman_animation.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/chesshub.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/config/socket.js" />
         <option value="$PROJECT_DIR$/views/partials/game.hbs" />
+        <option value="$PROJECT_DIR$/public/javascripts/chesshub.js" />
       </list>
     </option>
   </component>
@@ -352,7 +362,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21984732" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -474,7 +484,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="4740" max-vertical-offset="8190">
           <caret line="316" column="33" selection-start-line="316" selection-start-column="33" selection-end-line="316" selection-end-column="33" />
           <folding>
-            <element signature="e#7386#7519#0" expanded="false" />
+            <element signature="e#8280#8413#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -552,7 +562,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="4740" max-vertical-offset="8190">
           <caret line="316" column="33" selection-start-line="316" selection-start-column="33" selection-end-line="316" selection-end-column="33" />
           <folding>
-            <element signature="e#7386#7519#0" expanded="false" />
+            <element signature="e#8280#8413#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -660,6 +670,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -679,13 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="926" max-vertical-offset="1410">
-          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/database.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
@@ -702,18 +706,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/socket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1818" max-vertical-offset="3000">
-          <caret line="133" column="40" selection-start-line="133" selection-start-column="40" selection-end-line="133" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10606061" vertical-offset="521" max-vertical-offset="14055">
           <caret line="38" column="16" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -741,29 +738,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/gamelogic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1801" max-vertical-offset="2475">
-          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/layout.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.25" vertical-offset="720" max-vertical-offset="1155">
           <caret line="58" column="79" selection-start-line="58" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/hangman_animation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.888889" vertical-offset="1620" max-vertical-offset="2205">
-          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -775,21 +754,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/chesshub.js">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/hangman_animation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.962963" vertical-offset="6445" max-vertical-offset="10455">
-          <caret line="484" column="51" selection-start-line="484" selection-start-column="51" selection-end-line="484" selection-end-column="51" />
+        <state vertical-scroll-proportion="-18.333334" vertical-offset="675" max-vertical-offset="2265">
+          <caret line="80" column="24" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="24" />
           <folding>
-            <element signature="e#7386#7519#0" expanded="false" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/gamelogic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1515" max-vertical-offset="2475">
+          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="948" max-vertical-offset="1410">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/socket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.5185184" vertical-offset="1993" max-vertical-offset="3045">
+          <caret line="141" column="9" selection-start-line="141" selection-start-column="9" selection-end-line="141" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/game.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6" vertical-offset="0" max-vertical-offset="1650">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        <state vertical-scroll-proportion="-2.5" vertical-offset="60" max-vertical-offset="1680">
+          <caret line="8" column="71" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/chesshub.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23385301" vertical-offset="2760" max-vertical-offset="11505">
+          <caret line="191" column="29" selection-start-line="191" selection-start-column="29" selection-end-line="191" selection-end-column="29" />
+          <folding>
+            <element signature="e#8280#8413#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

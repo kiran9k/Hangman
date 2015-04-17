@@ -14,13 +14,23 @@ function initiate(){
     drawGallows();
     setLineWidth(4);
 }
-function draw(){
-    drawHead();
-    drawBody();
-    drawRightHand();
-    drawLeftHand();
-    drawRightFoot();
-    drawLeftFoot();
+function draw(i){
+    if(i==-1)
+        return;
+    if(i==0)
+        drawHead();
+    else if(i==1)
+        drawBody();
+    else if(i==2)
+        drawRightHand();
+    else if(i==3)
+        drawLeftHand();
+    else if(i==4)
+        drawRightFoot();
+    else if(i==5)
+        drawLeftFoot();
+    else
+        drawDead();
 };
 
 function continueExecution()
@@ -62,6 +72,17 @@ function drawHead() {
     context.closePath();
     context.lineWidth = 4;
     context.stroke();
+
+    context.beginPath();
+    context.arc(180,90,10,0,Math.PI*2,true);
+    context.closePath();
+    context.fill();
+    context.stroke();
+    context.beginPath();
+    context.arc(220,90,10,0,Math.PI*2,true);
+    context.fill();
+
+    context.closePath();    context.stroke();
 };
 
 function drawDead() {
@@ -124,20 +145,3 @@ function drawLeftFoot() {
     context.lineTo(250, 380);
     context.stroke();
 };
-
-function animate(){
-    draw();}
-function get_values(){
-    alert("getting values ");
-    var x=document.getElementById('ques_text');
-    var y=document.getElementsByName('side')[0];
-    alert(y.checked);
-    alert(x.value);
-}
-function char(){
-    var x=document.getElementsByClassName("answer_text");
-    for(var i=0;i< x.length;i++) {
-        // alert(x[i].value);
-        //alert(x[i].id);
-    }
-}

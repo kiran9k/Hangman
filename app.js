@@ -7,7 +7,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-//var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
 var url = require("url");
@@ -17,7 +17,7 @@ var config = require('config');
 var app = express();
 
 // configure database
-//require('./config/database')(app, mongoose);
+require('./config/database')(app, mongoose);
 
 // bootstrap data models
 fs.readdirSync(__dirname + '/models').forEach(function (file) {
